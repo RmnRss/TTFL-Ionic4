@@ -10,12 +10,11 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 
 import {DatePipe} from '@angular/common';
-import {ScrollVanishDirective} from './directives/scroll-vanish.directive';
 import {HttpClientModule} from '@angular/common/http';
 import {ScrollVanishModule} from './directives/scroll-vanish.module';
 
 @NgModule({
-  declarations: [AppComponent, ScrollVanishDirective],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
     IonicModule.forRoot(),
