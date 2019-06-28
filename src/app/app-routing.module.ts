@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' },
   { path: 'nba-daily-games', loadChildren: './pages/nba-daily-games/nba-daily-games.module#NbaDailyGamesPageModule' },
   { path: 'nba-player-stats', loadChildren: './pages/nba-player-stats/nba-player-stats.module#NbaPlayerStatsPageModule' },
+  { path: 'nba-team-roster', loadChildren: './pages/nba-team-roster/nba-team-roster.module#NbaTeamRosterPageModule' },
 ];
 
 @NgModule({

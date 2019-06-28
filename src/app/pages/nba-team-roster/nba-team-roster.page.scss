@@ -1,0 +1,19 @@
+.pick-card .info {
+  align-self: flex-start;
+  margin-top: 10px;
+  text-align: left !important;
+}
+
+.pick-card .stats {
+  align-self: flex-start;
+  margin-top: 10px;
+  text-align: left !important;
+}
+
+.unAvailable {
+  background: var(--ion-color-danger);
+}
+
+.highlight {
+  color: #32db64;
+}
