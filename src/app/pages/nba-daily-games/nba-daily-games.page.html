@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Matchs du {{selectedDay.date | date: 'd MMMM': undefined : 'fr-FR' | titlecase}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" padding>
+
+    <!-- GAME CARD -->
+    <ion-card *ngFor="let game of selectedDay.nbaGames">
+        <ion-card-content>
+
+            <ion-row align-items-center>
+
+                <!--  AWAY TEAM  -->
+                <ion-col size="5" align-self-center>
+
+                    <!-- TEAM LOGO -->
+                    <ion-row justify-content-center (click)="showRoster(game.vTeam)">
+                        <img class="nba-logo" src="{{game.vTeam.logoUrl}}"/>
+                    </ion-row>
+
+                    <!-- TEAM NAME -->
+                    <ion-row justify-content-center>
+                        <h2><b>{{game.vTeam.tName}}</b></h2>
+                    </ion-row>
+
+                    <!-- TEAM RECORDS -->
+                    <ion-row justify-content-center>
+                        <p>{{game.vTeam.wins}} - {{game.vTeam.loss}}</p>
+                    </ion-row>
+
+                </ion-col>
+
+                <ion-col size="2" style="height: 100%" align-self-end>
+                    <h2 text-center><b>@</b></h2>
+                    <p text-center>{{game.startTimeUTC | date: 'HH': undefined : 'fr-FR'}} h</p>
+                </ion-col>
+
+                <!--  HOME TEAM  -->
+                <ion-col size="5" align-self-center>
+
+                    <!-- TEAM LOGO -->
+                    <ion-row justify-content-center (click)="showRoster(game.hTeam)">
+                        <img class="nba-logo" src="{{game.hTeam.logoUrl}}"/>
+                    </ion-row>
+
+                    <!-- TEAM NAME -->
+                    <ion-row justify-content-center>
+                        <h2><b>{{game.hTeam.tName}}</b></h2>
+                    </ion-row>
+
+                    <!-- TEAM RECORDS -->
+                    <ion-row justify-content-center>
+                        <p>{{game.hTeam.wins}} - {{game.hTeam.loss}}</p>
+                    </ion-row>
+
+                </ion-col>
+
+            </ion-row>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

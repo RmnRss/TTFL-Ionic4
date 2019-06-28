@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'create-account', loadChildren: './pages/create-account/create-account.module#CreateAccountPageModule' },
   { path: 'create-or-join-team', loadChildren: './pages/create-or-join-team/create-or-join-team.module#CreateOrJoinTeamPageModule' },
   { path: 'faq', loadChildren: './pages/faq/faq.module#FaqPageModule' },
+  { path: 'nba-daily-games', loadChildren: './pages/nba-daily-games/nba-daily-games.module#NbaDailyGamesPageModule' },
 ];
 
 @NgModule({
