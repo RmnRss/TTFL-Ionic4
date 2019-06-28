@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+            <ion-title>Rejoindre une équipe</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!-- USER HAS NO TEAM -->
+<ion-content color="light" padding>
+    <section text-center>
+        <h2>Pas encore d'équipe ?</h2>
+    </section>
+
+    <!-- SEARCH TEAM PART -->
+    <section>
+        <ion-searchbar animated debounce="100" placeholder="Rechercher une équipe"
+                       (ionChange)="searchTeam(searchedTerms)"
+                       [(ngModel)]="searchedTerms" (keyup.enter)="searchTeam(searchedTerms)"></ion-searchbar>
+        <ion-list>
+            <ion-item *ngFor="let team of teamsFound" (click)="joinTeam(team)">
+                <ion-label>{{ team.name }}</ion-label>
+            </ion-item>
+        </ion-list>
+    </section>
+    <div class="separator"></div>
+
+    <!-- CREATE TEAM PART -->
+    <section class="form">
+        <form>
+            <ion-item class="custom-input">
+                <ion-label position="floating">Nom de l'équipe</ion-label>
+                <ion-input (keyup.enter)="createTeam(teamName)"
+                           [(ngModel)]="teamName"
+                           name="teamName"
+                           type="text"
+                           id="teamNameInput"></ion-input>
+            </ion-item>
+            <p class="error">{{error}}</p>
+
+            <section>
+                <ion-button color="primary" expand="block" (click)="createTeam(teamName)">Créer mon équipe</ion-button>
+            </section>
+        </form>
+    </section>
+</ion-content>
