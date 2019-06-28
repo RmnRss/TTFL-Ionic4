@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { NbaPlayerStatsPage } from './nba-player-stats.page';
+import {NBAPlayerStatsPage} from './nba-player-stats.page';
 import {ScrollVanishModule} from '../../directives/scroll-vanish.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: NbaPlayerStatsPage
+    component: NBAPlayerStatsPage
   }
 ];
 
@@ -23,6 +23,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ScrollVanishModule
   ],
-  declarations: [NbaPlayerStatsPage]
+  declarations: [NBAPlayerStatsPage]
 })
-export class NbaPlayerStatsPageModule {}
+export class NbaPlayerStatsPageModule {
+}

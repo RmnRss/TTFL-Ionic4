@@ -9,7 +9,7 @@ import {NBATeam} from '../../../class/NBA/NBATeam';
   templateUrl: './nba-daily-games.page.html',
   styleUrls: ['./nba-daily-games.page.scss'],
 })
-export class NbaDailyGamesPage implements OnInit {
+export class NBADailyGamesPage implements OnInit {
 
   selectedDay: NBADay;
 

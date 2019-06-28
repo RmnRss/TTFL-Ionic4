@@ -2,67 +2,64 @@
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
+      <ion-title *ngIf="sectionHidden()">{{NBAPlayer.firstName}} {{NBAPlayer.lastName}}</ion-title>
     </ion-buttons>
-    <ion-title>Matchs du {{selectedDay.date | date: 'd MMMM': undefined : 'fr-FR' | titlecase}}</ion-title>
   </ion-toolbar>
+
+  <section #vanishingSection [appScrollVanish]="scrollArea">
+    <ion-row align-items-start>
+      <!-- JERSEY -->
+      <!-- Displayed when the user has chosen a pick -->
+      <ion-col size="3" style="margin-top: 5px">
+        <svg height="43" overflow="hidden" style="display: block;margin: auto;" width="34">
+          <rect [ngStyle]="{'fill': NBAPlayer.team.colors.primary}" height="43" width="34" x="0"
+                y="0"></rect>
+          <ellipse [ngStyle]="{'stroke': NBAPlayer.team.colors.secondary}" cx="0" cy="5" fill="#333333" rx="8"
+                   ry="15"
+                   stroke-width="2"></ellipse>
+          <ellipse [ngStyle]="{'stroke': NBAPlayer.team.colors.secondary}" cx="35" cy="5" fill="#333333"
+                   rx="8"
+                   ry="15"
+                   stroke-width="2"></ellipse>
+          <ellipse [ngStyle]="{'stroke': NBAPlayer.team.colors.secondary}" cx="17" cy="0" fill="#333333"
+                   rx="8"
+                   ry="8"
+                   stroke-width="2"></ellipse>
+        </svg>
+        <div class="jersey-nbr">{{NBAPlayer.jersey}}</div>
+      </ion-col>
+
+      <ion-col size="9" class="info">
+        <h2>{{NBAPlayer.firstName}} {{NBAPlayer.lastName}}</h2>
+        <p class="uppercase">{{NBAPlayer.team.ttsName | uppercase}} | {{NBAPlayer.pos | uppercase}}</p>
+      </ion-col>
+    </ion-row>
+  </section>
+
+  <ion-segment>
+    <ion-segment-button>
+      <p class="category-name uppercase">PPM</p>
+      <h2 class="number">{{NBAPlayer.ppg}}</h2>
+    </ion-segment-button>
+    <ion-segment-button>
+      <p class="category-name uppercase">RPM</p>
+      <h2 class="number">{{NBAPlayer.rpg}}</h2>
+    </ion-segment-button>
+    <ion-segment-button>
+      <p class="category-name uppercase">APM</p>
+      <h2 class="number">{{NBAPlayer.apg}}</h2>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
-<ion-content color="light" padding>
-
-  <!-- GAME CARD -->
-  <ion-card *ngFor="let game of selectedDay.nbaGames">
-    <ion-card-content>
-
-      <ion-row align-items-center>
-
-        <!--  AWAY TEAM  -->
-        <ion-col size="5" align-self-center>
-
-          <!-- TEAM LOGO -->
-          <ion-row justify-content-center (click)="showRoster(game.vTeam)">
-            <img class="nba-logo" src="{{game.vTeam.logoUrl}}"/>
-          </ion-row>
-
-          <!-- TEAM NAME -->
-          <ion-row justify-content-center>
-            <h2><b>{{game.vTeam.tName}}</b></h2>
-          </ion-row>
-
-          <!-- TEAM RECORDS -->
-          <ion-row justify-content-center>
-            <p>{{game.vTeam.wins}} - {{game.vTeam.loss}}</p>
-          </ion-row>
-
-        </ion-col>
-
-        <ion-col size="2" style="height: 100%" align-self-end>
-          <h2 text-center><b>@</b></h2>
-          <p text-center>{{game.startTimeUTC | date: 'HH': undefined : 'fr-FR'}} h</p>
-        </ion-col>
-
-        <!--  HOME TEAM  -->
-        <ion-col size="5" align-self-center>
-
-          <!-- TEAM LOGO -->
-          <ion-row justify-content-center (click)="showRoster(game.hTeam)">
-            <img class="nba-logo" src="{{game.hTeam.logoUrl}}"/>
-          </ion-row>
-
-          <!-- TEAM NAME -->
-          <ion-row justify-content-center>
-            <h2><b>{{game.hTeam.tName}}</b></h2>
-          </ion-row>
-
-          <!-- TEAM RECORDS -->
-          <ion-row justify-content-center>
-            <p>{{game.hTeam.wins}} - {{game.hTeam.loss}}</p>
-          </ion-row>
-
-        </ion-col>
-
-      </ion-row>
-
-    </ion-card-content>
-  </ion-card>
+<ion-content color="light" #scrollArea scrollEvents="true">
+  <!-- HISTORIC -->
+  <ion-list>
+    <ion-item *ngFor="let pick of picks">
+      <ion-label slot="start"><p>{{pick.gameDate.date | date: 'M/d/yy': undefined : 'fr-FR'}}}}</p></ion-label>
+      <ion-label><p>vs. opposingTeam</p></ion-label>
+      <ion-label slot="end"><p><b>{{pick.score}}</b> pts</p></ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

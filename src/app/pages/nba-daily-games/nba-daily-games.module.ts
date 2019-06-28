@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { NbaDailyGamesPage } from './nba-daily-games.page';
+import {NBADailyGamesPage} from './nba-daily-games.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: NbaDailyGamesPage
+    component: NBADailyGamesPage
   }
 ];
 
@@ -21,6 +21,7 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NbaDailyGamesPage]
+  declarations: [NBADailyGamesPage]
 })
-export class NbaDailyGamesPageModule {}
+export class NbaDailyGamesPageModule {
+}
