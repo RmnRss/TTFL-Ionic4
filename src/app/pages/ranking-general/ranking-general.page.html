@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Classement Général</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="light" class="ranking" padding>
+    <ion-row align-items-end class="ranking-header">
+        <ion-col offset="1" size="2"><b>Rang</b></ion-col>
+        <ion-col offset="7" size="2"><b>Pts</b></ion-col>
+    </ion-row>
+
+    <ion-row align-items-center class="ranked-items" *ngFor="let user of users">
+        <ion-col size="1" align-self-center>
+            <ion-icon name="arrow-dropup"></ion-icon>
+        </ion-col>
+        <ion-col size="2" align-self-center>
+            <p>{{user.rank}}</p>
+        </ion-col>
+        <ion-col size="7" align-self-center>
+            <b>{{user.username | titlecase}}</b>
+        </ion-col>
+        <ion-col size="2" align-self-center>
+            <b>{{user.points}}</b>
+        </ion-col>
+    </ion-row>
+</ion-content>
