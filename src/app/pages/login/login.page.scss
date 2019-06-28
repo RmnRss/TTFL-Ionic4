@@ -1,0 +1,65 @@
+/****************************************************
+               LOGIN HEADER STYLE
+****************************************************/
+
+.bg-header {
+  position: absolute;
+  width: 100%;
+  height: 208px;
+  z-index: 0;
+  background: url(../../../assets/svg/header.svg);
+}
+
+.login-header {
+  display: block;
+  text-align: center;
+  margin-top: -45px;
+  transform: rotate(-32deg);
+}
+
+.brand-name {
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  color: white;
+  margin-top: 5rem;
+}
+
+.brand-row {
+  justify-content: start;
+  margin-left: -25px;
+}
+
+.app-name {
+  color: white;
+  margin-top: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+}
+
+.app-row {
+  color: white;
+  margin-top: 0;
+  justify-content: center;
+}
+
+form {
+  margin-top: 85px;
+}
+
+.pw-link {
+  margin-left: 175px;
+  margin-bottom: 2rem;
+}
+
+.small-links {
+  margin-top: 1.5rem;
+  text-align: center;
+  justify-content: center;
+}
+
+ion-item ion-icon {
+  margin-top: 28px;
+  color: white;
+}
+
+
