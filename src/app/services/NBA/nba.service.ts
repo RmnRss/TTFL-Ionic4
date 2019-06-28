@@ -115,8 +115,10 @@ export class NBAService {
         return new Promise((resolve, reject) => {
             this.http.get(url).subscribe((fullRoster: any) => {
                 let roster = new Array<NBAPlayer>();
-
-                for (let player of fullRoster.league.standard.players) {
+                let allPlayers = fullRoster.league.standard.players;
+                // let allPlayers = fullRoster.league.sacramento.players;
+                
+                for (let player of allPlayers) {
                     let tempPlayer = new NBAPlayer();
                     tempPlayer.personId = player.personId;
 
@@ -151,7 +153,10 @@ export class NBAService {
                 let nbaPlayer = new NBAPlayer();
                 nbaPlayer.personId = id;
 
-                for (let player of allPlayers.league.standard) {
+                let all = allPlayers.league.standard;
+                // let all = allPlayers.league.sacramento;
+
+                for (let player of all) {
                     if (nbaPlayer.personId == player.personId) {
                         nbaPlayer.firstName = player.firstName;
                         nbaPlayer.lastName = player.lastName;
@@ -183,6 +188,7 @@ export class NBAService {
         return new Promise((resolve, reject) => {
             this.http.get(url).subscribe((res: any) => {
                 let seasonStats = res.league.standard.stats.latest;
+                // let seasonStats = res.league.sacramento.stats.latest;
                 player.ppg = seasonStats.ppg;
                 player.rpg = seasonStats.rpg;
                 player.apg = seasonStats.apg;
@@ -212,7 +218,8 @@ export class NBAService {
         return new Promise((resolve, reject) => {
             this.http.get(url).subscribe((schedule: any) => {
                 let NBAGames = new Array<NBAGame>();
-                let allNBAGames = schedule.league.standard;
+                // let allNBAGames = schedule.league.standard;
+                let allNBAGames = schedule.league.sacramento;
 
                 for (let anNBAGame of allNBAGames) {
 
