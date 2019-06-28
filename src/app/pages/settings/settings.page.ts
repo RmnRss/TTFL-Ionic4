@@ -7,6 +7,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SettingsPage implements OnInit {
 
+    newEmail: string;
+    newPassword: string;
+    confirmPassword: string;
+
     constructor() {
     }
 
