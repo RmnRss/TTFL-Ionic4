@@ -9,21 +9,21 @@ import {NBAPlayerStatsPage} from './nba-player-stats.page';
 import {ScrollVanishModule} from '../../directives/scroll-vanish.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: NBAPlayerStatsPage
-  }
+    {
+        path: '',
+        component: NBAPlayerStatsPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes),
-    ScrollVanishModule
-  ],
-  declarations: [NBAPlayerStatsPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RouterModule.forChild(routes),
+        ScrollVanishModule
+    ],
+    declarations: [NBAPlayerStatsPage]
 })
 export class NbaPlayerStatsPageModule {
 }

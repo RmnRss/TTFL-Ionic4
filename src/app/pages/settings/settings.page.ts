@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.page.html',
-  styleUrls: ['./settings.page.scss'],
+    selector: 'app-settings',
+    templateUrl: './settings.page.html',
+    styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  changeEmail(newEmail: string) {
+    changeEmail(newEmail: string) {
 
-  }
+    }
 
-  changePassword(newPassword: string, confirmPassword: string) {
+    changePassword(newPassword: string, confirmPassword: string) {
 
-  }
+    }
 }

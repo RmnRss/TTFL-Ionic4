@@ -9,21 +9,21 @@ import {TeamPage} from './team.page';
 import {ScrollVanishModule} from '../../directives/scroll-vanish.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: TeamPage
-  }
+    {
+        path: '',
+        component: TeamPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes),
-    ScrollVanishModule
-  ],
-  declarations: [TeamPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RouterModule.forChild(routes),
+        ScrollVanishModule
+    ],
+    declarations: [TeamPage]
 })
 export class TeamPageModule {
 }

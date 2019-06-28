@@ -15,11 +15,12 @@
 
     <!-- SEARCH TEAM PART -->
     <section>
-        <ion-searchbar animated debounce="100" placeholder="Rechercher une équipe"
-                       (ionChange)="searchTeam(searchedTerms)"
-                       [(ngModel)]="searchedTerms" (keyup.enter)="searchTeam(searchedTerms)"></ion-searchbar>
+        <ion-searchbar (ionChange)="searchTeam(searchedTerms)" (keyup.enter)="searchTeam(searchedTerms)"
+                       [(ngModel)]="searchedTerms"
+                       animated
+                       debounce="100" placeholder="Rechercher une équipe"></ion-searchbar>
         <ion-list>
-            <ion-item *ngFor="let team of teamsFound" (click)="joinTeam(team)">
+            <ion-item (click)="joinTeam(team)" *ngFor="let team of teamsFound">
                 <ion-label>{{ team.name }}</ion-label>
             </ion-item>
         </ion-list>
@@ -33,14 +34,14 @@
                 <ion-label position="floating">Nom de l'équipe</ion-label>
                 <ion-input (keyup.enter)="createTeam(teamName)"
                            [(ngModel)]="teamName"
+                           id="teamNameInput"
                            name="teamName"
-                           type="text"
-                           id="teamNameInput"></ion-input>
+                           type="text"></ion-input>
             </ion-item>
             <p class="error">{{error}}</p>
 
             <section>
-                <ion-button color="primary" expand="block" (click)="createTeam(teamName)">Créer mon équipe</ion-button>
+                <ion-button (click)="createTeam(teamName)" color="primary" expand="block">Créer mon équipe</ion-button>
             </section>
         </form>
     </section>

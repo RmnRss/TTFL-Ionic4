@@ -7,45 +7,45 @@ import {Router} from '@angular/router';
 import {UserService} from './services/api/user.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html'
+    selector: 'app-root',
+    templateUrl: 'app.component.html'
 })
 export class AppComponent {
 
-  constructor(
-      private platform: Platform,
-      private splashScreen: SplashScreen,
-      private statusBar: StatusBar,
-      private router: Router,
-      private menu: MenuController,
-      public userService: UserService
-  ) {
-    this.initializeApp();
-  }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
-
-  openPage(destination: string) {
-    this.menu.toggle();
-    this.router.navigate(['/' + destination]);
-  }
-
-  logOut() {
-    // TODO : Add logout promise & fix logout
-    this.openPage('login');
-  }
-
-  openTeamPage() {
-    this.menu.toggle();
-    if (this.userService.userHasTeam()) {
-      this.router.navigate(['/team']);
-    } else {
-      this.router.navigate(['/create-or-join-team']);
+    constructor(
+        private platform: Platform,
+        private splashScreen: SplashScreen,
+        private statusBar: StatusBar,
+        private router: Router,
+        private menu: MenuController,
+        public userService: UserService
+    ) {
+        this.initializeApp();
     }
-  }
+
+    initializeApp() {
+        this.platform.ready().then(() => {
+            this.statusBar.styleDefault();
+            this.splashScreen.hide();
+        });
+    }
+
+    openPage(destination: string) {
+        this.menu.toggle();
+        this.router.navigate(['/' + destination]);
+    }
+
+    logOut() {
+        // TODO : Add logout promise & fix logout
+        this.openPage('login');
+    }
+
+    openTeamPage() {
+        this.menu.toggle();
+        if (this.userService.userHasTeam()) {
+            this.router.navigate(['/team']);
+        } else {
+            this.router.navigate(['/create-or-join-team']);
+        }
+    }
 }

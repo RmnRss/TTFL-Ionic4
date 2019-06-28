@@ -17,20 +17,20 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr);
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule,
-    ScrollVanishModule],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    DatePipe,
-    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    entryComponents: [],
+    imports: [BrowserModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        HttpClientModule,
+        ScrollVanishModule],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        DatePipe,
+        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

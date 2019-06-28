@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-rules',
-  templateUrl: './rules.page.html',
-  styleUrls: ['./rules.page.scss'],
+    selector: 'app-rules',
+    templateUrl: './rules.page.html',
+    styleUrls: ['./rules.page.scss'],
 })
 export class RulesPage implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

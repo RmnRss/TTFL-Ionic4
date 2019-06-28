@@ -1,8 +1,8 @@
-import { ScrollVanishDirective } from './scroll-vanish.directive';
+import {ScrollVanishDirective} from './scroll-vanish.directive';
 
 describe('ScrollVanishDirective', () => {
-  it('should create an instance', () => {
-    const directive = new ScrollVanishDirective();
-    expect(directive).toBeTruthy();
-  });
+    it('should create an instance', () => {
+        const directive = new ScrollVanishDirective();
+        expect(directive).toBeTruthy();
+    });
 });

@@ -9,21 +9,21 @@ import {UserProfilePage} from './user-profile.page';
 import {ScrollVanishModule} from '../../directives/scroll-vanish.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: UserProfilePage
-  }
+    {
+        path: '',
+        component: UserProfilePage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes),
-    ScrollVanishModule
-  ],
-  declarations: [UserProfilePage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RouterModule.forChild(routes),
+        ScrollVanishModule
+    ],
+    declarations: [UserProfilePage]
 })
 export class UserProfilePageModule {
 }

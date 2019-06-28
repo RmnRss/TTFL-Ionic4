@@ -1,52 +1,52 @@
-import {NBATeam} from "./NBATeam";
+import {NBATeam} from './NBATeam';
 
 export class NBAGame {
 
-  constructor() {
-    this._startTimeUTC = new Date();
-    this._startDateEastern = '';
-    this._vTeam = new NBATeam();
-    this._hTeam = new NBATeam();
-  }
+    constructor() {
+        this._startTimeUTC = new Date();
+        this._startDateEastern = '';
+        this._vTeam = new NBATeam();
+        this._hTeam = new NBATeam();
+    }
 
-  private _startTimeUTC: Date; //Time at which the game starts
+    private _startTimeUTC: Date; //Time at which the game starts
 
-  get startTimeUTC(): Date {
-    return this._startTimeUTC;
-  }
+    get startTimeUTC(): Date {
+        return this._startTimeUTC;
+    }
 
-  set startTimeUTC(value: Date) {
-    this._startTimeUTC = value;
-  }
+    set startTimeUTC(value: Date) {
+        this._startTimeUTC = value;
+    }
 
-  private _startDateEastern: string;
+    private _startDateEastern: string;
 
-  get startDateEastern(): string {
-    return this._startDateEastern;
-  }
+    get startDateEastern(): string {
+        return this._startDateEastern;
+    }
 
-  set startDateEastern(value: string) {
-    this._startDateEastern = value;
-  }
+    set startDateEastern(value: string) {
+        this._startDateEastern = value;
+    }
 
-  private _hTeam: NBATeam; //Home NBATeam userLogin
+    private _hTeam: NBATeam; //Home NBATeam userLogin
 
-  get hTeam(): NBATeam {
-    return this._hTeam;
-  }
+    get hTeam(): NBATeam {
+        return this._hTeam;
+    }
 
-  set hTeam(value: NBATeam) {
-    this._hTeam = value;
-  }
+    set hTeam(value: NBATeam) {
+        this._hTeam = value;
+    }
 
-  private _vTeam: NBATeam; //Visitor NBATeam userLogin
+    private _vTeam: NBATeam; //Visitor NBATeam userLogin
 
-  get vTeam(): NBATeam {
-    return this._vTeam;
-  }
+    get vTeam(): NBATeam {
+        return this._vTeam;
+    }
 
-  set vTeam(value: NBATeam) {
-    this._vTeam = value;
-  }
+    set vTeam(value: NBATeam) {
+        this._vTeam = value;
+    }
 
 }

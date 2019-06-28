@@ -8,20 +8,20 @@ import {IonicModule} from '@ionic/angular';
 import {NBADailyGamesPage} from './nba-daily-games.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: NBADailyGamesPage
-  }
+    {
+        path: '',
+        component: NBADailyGamesPage
+    }
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [NBADailyGamesPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RouterModule.forChild(routes)
+    ],
+    declarations: [NBADailyGamesPage]
 })
 export class NbaDailyGamesPageModule {
 }
