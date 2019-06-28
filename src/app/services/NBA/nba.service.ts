@@ -11,7 +11,7 @@ import {NBADay} from '../../../class/NBA/NBADay';
     providedIn: 'root'
 })
 export class NBAService {
-    nbaApiUrl: string = 'http://data.nba.net/10s';
+    nbaApiUrl: string = 'https://data.nba.net/10s';
 
     links: NBALinks = new NBALinks();
     NBATeamsColors: Map<string, NBATeamColors>;
@@ -117,7 +117,7 @@ export class NBAService {
                 let roster = new Array<NBAPlayer>();
                 let allPlayers = fullRoster.league.standard.players;
                 // let allPlayers = fullRoster.league.sacramento.players;
-                
+
                 for (let player of allPlayers) {
                     let tempPlayer = new NBAPlayer();
                     tempPlayer.personId = player.personId;
