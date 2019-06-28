@@ -9,9 +9,12 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 
-import {DatePipe} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
+import {DatePipe, registerLocaleData} from '@angular/common';
 import {ScrollVanishModule} from './directives/scroll-vanish.module';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [AppComponent],
