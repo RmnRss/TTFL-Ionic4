@@ -12,6 +12,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {DatePipe} from '@angular/common';
 import {ScrollVanishDirective} from './directives/scroll-vanish.directive';
 import {HttpClientModule} from '@angular/common/http';
+import {ScrollVanishModule} from './directives/scroll-vanish.module';
 
 @NgModule({
   declarations: [AppComponent, ScrollVanishDirective],
@@ -19,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule],
+    HttpClientModule,
+    ScrollVanishModule],
   providers: [
     StatusBar,
     SplashScreen,
