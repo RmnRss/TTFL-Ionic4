@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Créer ton compte</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" padding>
+    <!-- CREATION FORM -->
+    <form>
+        <ion-list>
+            <ion-item class="custom-input">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input [(ngModel)]="email"
+                           name="userEmail"
+                           (keyup.enter)="createUser(email, password, username)"
+                           class="round-edges"
+                           id="emailInput" required
+                           type="email"></ion-input>
+            </ion-item>
+
+            <ion-item class="custom-input">
+                <ion-label position="floating">Identifiant</ion-label>
+                <ion-input [(ngModel)]="username"
+                           name="username"
+                           (keyup.enter)="createUser(email, password, username)"
+                           class="round-edges"
+                           id="idInput" required
+                           type="email"></ion-input>
+            </ion-item>
+
+            <ion-item class="custom-input">
+                <ion-label position="floating">Mot de passe</ion-label>
+                <ion-input (keyup.enter)="createUser(email, password, username)"
+                           [(ngModel)]="password"
+                           name="password"
+                           [type]="password"
+                           class="round-edges"
+                           id="passwordInput"
+                           required></ion-input>
+            </ion-item>
+            <p class="error">{{error}}</p>
+        </ion-list>
+
+        <section>
+            <ion-button color="primary" expand="block" (click)="createUser(email, password, username)">
+                CREER MON COMPTE
+            </ion-button>
+        </section>
+    </form>
+
+</ion-content>
