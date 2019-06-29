@@ -33,13 +33,13 @@ export class TTFLService {
      *                              PLAYERS                               *
      * *******************************************************************/
 
-    getUsersRankingPromise(): Promise<any> {
+    getUsersRanking(): Promise<any> {
         let url = this.apiUrl + 'users/ranking';
 
         return new Promise((resolve, reject) => {
             this.http.get(url).subscribe(
-                success => {
-                    resolve(success);
+                (success: any) => {
+                    resolve(success.users);
                 }, error => {
                     reject(error);
                 });
