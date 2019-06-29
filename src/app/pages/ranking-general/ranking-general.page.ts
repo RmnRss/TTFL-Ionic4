@@ -17,9 +17,9 @@ export class RankingGeneralPage implements OnInit {
     }
 
     ngOnInit() {
-        this.ttflService.getUsersRankingPromise().then(
+        this.ttflService.getUsersRanking().then(
             response => {
-                this.users = response.users;
+                this.users = response;
             }, error => {
                 console.log(error);
             });
