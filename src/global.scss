@@ -34,32 +34,39 @@ ion-title, ion-card-title, ion-button, h1, h2, .uppercase {
   font-weight: 600;
 }
 
+.md ion-label, .ios ion-label {
+  font-family: Montserrat, sans-serif !important;
+}
+
 h3, h4, h5, h6 {
   font-weight: normal;
 }
 
 h1{
-  font-size: 1.625rem;
+  font-size: 1.625rem !important;
 }
 
 h2, h3{
-  font-size: 1.25rem;
+  font-size: 1.25rem !important;
 }
 
 h4, h5, h6{
-  font-size: 1.125rem;
+  font-size: 1.125rem !important;
+}
+
+p, b {
+  font-size: 1rem !important;
 }
 
 p {
   font-family: Rubik, sans-serif;
-  font-size: 1rem;
   font-weight: normal;
 }
 
 a {
   color: var(--ion-color-primary);
   font-family: Rubik, sans-serif;
-  font-size: 0.875rem;
+  //font-size: 0.875rem;
   font-weight: normal;
 }
 
@@ -92,6 +99,10 @@ b {
 .error {
   color: var(--ion-color-danger);
   font-size: small;
+}
+
+.item-inner{
+  padding-right: 0;
 }
 
 /****************************************************
@@ -139,8 +150,6 @@ b {
 }
 
 .pick-card .info {
-  align-self: flex-start;
-  margin-top: 5px;
   text-align: left !important;
 }
 
@@ -163,10 +172,6 @@ b {
   justify-content: center !important;
   text-align: center !important;
   background-color: var(--ion-color-dark);
-
-  font-family: Montserrat, sans-serif;
-  font-size: 1.15rem !important;
-  font-weight: bold;
 }
 
 .pick-card .date ion-row {
@@ -178,15 +183,15 @@ b {
   color: white;
   margin-top: 5px !important;
 
-  font-size: 1.5rem !important;
-  font-weight: bold !important;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
 }
 
 .pick-card .month {
   color: var(--ion-color-danger);
 
-  font-size: 1.2rem !important;
-  font-weight: bold !important;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
   overflow: hidden;
 }
 
@@ -371,6 +376,7 @@ ion-header section .uppercase {
 
 ion-segment-button {
   background-color: white;
+  pointer-events: none;
   color: var(--ion-color-contrast);
 }
 
@@ -395,6 +401,17 @@ ion-segment-button {
 
 .ranking .ranked-items {
   max-height: 50px;
+  border-bottom: 0.2px solid var(--ion-color-light-shade);
+}
+
+.ranking .ranked-items ion-icon.up {
+  transform: rotate(-90deg);
+  color: var(--ion-color-success);
+}
+
+.ranking .ranked-items ion-icon.down {
+  transform: rotate(90deg);
+  color: var(--ion-color-danger);
 }
 
 .ranking .ranked-items ion-col {
