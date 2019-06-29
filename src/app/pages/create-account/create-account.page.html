@@ -16,7 +16,6 @@
                 <ion-input [(ngModel)]="email"
                            name="userEmail"
                            (keyup.enter)="createUser(email, password, username)"
-                           class="round-edges"
                            id="emailInput" required
                            type="email"></ion-input>
             </ion-item>
@@ -26,7 +25,6 @@
                 <ion-input [(ngModel)]="username"
                            name="username"
                            (keyup.enter)="createUser(email, password, username)"
-                           class="round-edges"
                            id="idInput" required
                            type="email"></ion-input>
             </ion-item>
@@ -37,7 +35,6 @@
                            [(ngModel)]="password"
                            name="password"
                            [type]="password"
-                           class="round-edges"
                            id="passwordInput"
                            required></ion-input>
             </ion-item>
