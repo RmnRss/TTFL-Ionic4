@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 @Component({
     selector: 'app-home',
     templateUrl: 'home.page.html',
-    styleUrls: ['home.page.scss'],
+    styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
 
@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
      */
     ngOnInit() {
         this.picks = new Array<TTFLPick>();
-        this.NBADaysOfTheWeek = this.dateService.getWeek(new Date('22 May, 2019'));
+        this.NBADaysOfTheWeek = this.dateService.getWeek(new Date('1 July, 2019'));
 
         this.nbaService.getLinksPromise()
             .then(res => {
@@ -54,7 +54,6 @@ export class HomePage implements OnInit {
                                     .then(pickReceived => {
                                         let pick = pickReceived;
                                         this.picks.push(pick);
-                                        console.log(pick);
                                     });
 
                             }
@@ -71,4 +70,6 @@ export class HomePage implements OnInit {
         this.nbaService.setCurrentDay(day);
         this.router.navigate(['nba-daily-games']);
     }
+
+
 }

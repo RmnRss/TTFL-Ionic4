@@ -1,59 +1,51 @@
+.custom-padding {
+  padding: 30px;
+  padding-top: 5px;
+}
+
 /****************************************************
                LOGIN HEADER STYLE
 ****************************************************/
-
-.bg-header {
-  position: absolute;
-  width: 100%;
-  height: 208px;
-  z-index: 0;
-  background: url(../../../assets/svg/header.svg);
+.bg-header{
+  background: var(--ion-color-danger-alt);
+  min-height: 30%;
+  min-width: 100%;
+  padding: 30px;
 }
 
 .login-header {
   display: block;
-  text-align: center;
-  margin-top: -45px;
-  transform: rotate(-32deg);
+  text-align: start;
 }
 
 .brand-name {
   font-family: Lato, sans-serif;
   font-weight: bold;
   color: white;
-  margin-top: 5rem;
-}
-
-.brand-row {
-  justify-content: start;
-  margin-left: -25px;
-}
-
-.app-name {
-  color: white;
-  margin-top: 0;
-  font-family: Montserrat, sans-serif;
-  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin-top: 20%;
 }
 
 .app-row {
   color: white;
-  margin-top: 0;
-  justify-content: center;
+  justify-content: start;
 }
 
-form {
-  margin-top: 85px;
+.app-name {
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+  letter-spacing: 0.08em;
 }
+
 
 .pw-link {
-  margin-left: 175px;
   margin-bottom: 2rem;
 }
 
 .small-links {
-  margin-top: 1.5rem;
-  text-align: center;
+  margin: 1.5rem 0;
   justify-content: center;
 }
 

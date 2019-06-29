@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
     login(id: string, password: string) {
         this.userService.logIn(id, password)
             .then(resp => {
-                this.presentLoading();
+                // this.presentLoading();
                 this.router.navigate(['home']);
             })
             .catch(errorMessage => {

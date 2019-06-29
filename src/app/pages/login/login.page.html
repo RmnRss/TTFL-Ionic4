@@ -1,69 +1,74 @@
 <ion-content color="dark" class="form">
-
-  <section class="bg-header">
-
-  </section>
-
-  <section padding>
     <!-- HEADER -->
-    <section class="login-header">
-      <ion-row class="brand-row">
-        <h1 class="brand-name">#TRASHTALK</h1>
-      </ion-row>
+    <section class="bg-header ion-align-self-stretch">
+        <section class="login-header">
+            <ion-row>
+                <h1 class="brand-name">#TRASHTALK</h1>
+            </ion-row>
 
-      <ion-row class="app-row">
-        <h3 class="app-name">FANTASY LEAGUE</h3>
-      </ion-row>
+            <ion-row class="app-row">
+                <h3 class="app-name">FANTASY LEAGUE</h3>
+            </ion-row>
+        </section>
+    </section>
+    <section style="margin-inline-start: 30px">
+        <h3>Connexion</h3>
+    </section>
+    <section class="custom-padding ion-align-self-stretch">
+        <section>
+            <!-- LOGIN FORM -->
+            <form>
+                <ion-list>
+                    <ion-item class="custom-input ion-no-padding">
+                        <ion-label position="floating">Identifiant</ion-label>
+                        <ion-input [(ngModel)]="userLogin"
+                                   name="userLogin"
+                                   (keyup.enter)="login(userLogin,password)"
+                                   class="round-edges"
+                                   id="idInput" required
+                                   type="email"></ion-input>
+                    </ion-item>
+
+                    <ion-item class="custom-input ion-no-padding">
+                        <ion-icon name="eye-off" slot="end" (click)="togglePassword()"
+                                  *ngIf="!passwordShown"></ion-icon>
+                        <ion-icon name="eye" slot="end" (click)="togglePassword()" *ngIf="passwordShown"></ion-icon>
+
+                        <ion-label position="floating">Mot de passe</ion-label>
+                        <ion-input (keyup.enter)="login(userLogin,password)"
+                                   [(ngModel)]="password"
+                                   name="password"
+                                   [type]="passwordType"
+                                   class="round-edges"
+                                   id="passwordInput"
+                                   required></ion-input>
+                    </ion-item>
+                    <p class="error">{{error}}</p>
+                </ion-list>
+
+                <ion-row class="pw-link ion-justify-content-end">
+                    <a class="ion-text-end" (click)="forgotPassword()">Mot de passe oublié ?</a>
+                </ion-row>
+
+                <section>
+                    <ion-button color="primary" expand="block" (click)="login(userLogin,password)">Connexion
+                    </ion-button>
+                </section>
+            </form>
+
+            <ion-row class="small-links">
+                <a (click)="showRules()" class="uppercase" style="margin-right: 5px;">Les regles</a>
+                <a class="uppercase"> - </a>
+                <a (click)="showFAQ()" class="uppercase" style="margin-left: 5px;">FAQ</a>
+            </ion-row>
+
+            <ion-row class="small-links" (click)="goToCreateAccount()">
+                <p style="font-size: 1rem; margin: 0.5rem 0;">Pas encore de compte ?</p>
+                <b><a style="font-size: 1rem; margin: 0.5rem 0;" >Rejoins la communauté !</a></b>
+            </ion-row>
+
+        </section>
     </section>
 
-    <!-- LOGIN FORM -->
-    <form>
-      <ion-list>
-        <ion-item class="custom-input">
-          <ion-label position="floating">Identifiant ou Email</ion-label>
-          <ion-input [(ngModel)]="userLogin"
-                     name="userLogin"
-                     (keyup.enter)="login(userLogin,password)"
-                     class="round-edges"
-                     id="idInput" required
-                     type="email"></ion-input>
-        </ion-item>
-
-        <ion-item class="custom-input">
-          <ion-icon name="eye-off" slot="end" (click)="togglePassword()" *ngIf="!passwordShown"></ion-icon>
-          <ion-icon name="eye" slot="end" (click)="togglePassword()" *ngIf="passwordShown"></ion-icon>
-
-          <ion-label position="floating">Mot de passe</ion-label>
-          <ion-input (keyup.enter)="login(userLogin,password)"
-                     [(ngModel)]="password"
-                     name="password"
-                     [type]="passwordType"
-                     class="round-edges"
-                     id="passwordInput"
-                     required></ion-input>
-        </ion-item>
-        <p class="error">{{error}}</p>
-      </ion-list>
-
-      <ion-row class="pw-link">
-        <a (click)="forgotPassword()">Mot de passe oublié ?</a>
-      </ion-row>
-
-      <section>
-        <ion-button color="primary" expand="block" (click)="login(userLogin,password)">Connexion</ion-button>
-      </section>
-    </form>
-
-    <ion-row class="small-links" (click)="goToCreateAccount()">
-      <a>Pas encore de compte ?</a>
-      <a>Rejoins la communauté !</a>
-    </ion-row>
-
-    <ion-row class="small-links">
-      <a (click)="showRules()" class="uppercase" style="margin-right: 5px;">Les regles</a>
-      <a class="uppercase"> - </a>
-      <a (click)="showFAQ()" class="uppercase" style="margin-left: 5px;">FAQ</a>
-    </ion-row>
-  </section>
 
 </ion-content>
