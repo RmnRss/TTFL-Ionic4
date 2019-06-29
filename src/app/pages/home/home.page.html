@@ -18,11 +18,11 @@
                     <!-- DATE -->
                     <ion-col size="2" class="date">
                         <ion-row>
-                            <h3 class="day">{{pick.gameDate.date | date: 'dd': undefined : 'fr-FR'}}</h3>
+                            <h1 class="day">{{pick.gameDate.date | date: 'dd': undefined : 'fr-FR'}}</h1>
                         </ion-row>
 
                         <ion-row>
-                            <h3 class="month">{{pick.gameDate.date | date: 'MMMM': undefined : 'fr-FR' | uppercase | slice :0:3 }}</h3>
+                            <h6 class="month">{{pick.gameDate.date | date: 'MMMM': undefined : 'fr-FR' | uppercase | slice :0:3 }}</h6>
                         </ion-row>
                     </ion-col>
 
