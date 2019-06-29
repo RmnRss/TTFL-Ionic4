@@ -1,4 +1,4 @@
-<ion-content color="dark" class="form">
+<ion-content color="dark">
     <!-- HEADER -->
     <section class="bg-header ion-align-self-stretch">
         <section class="login-header">
@@ -11,7 +11,7 @@
             </ion-row>
         </section>
     </section>
-    <section style="margin-inline-start: 30px">
+    <section style="margin-inline-start: 30px; margin-left: 30px;">
         <h3>Connexion</h3>
     </section>
     <section class="custom-padding ion-align-self-stretch">
@@ -24,7 +24,6 @@
                         <ion-input [(ngModel)]="userLogin"
                                    name="userLogin"
                                    (keyup.enter)="login(userLogin,password)"
-                                   class="round-edges"
                                    id="idInput" required
                                    type="email"></ion-input>
                     </ion-item>
@@ -39,7 +38,6 @@
                                    [(ngModel)]="password"
                                    name="password"
                                    [type]="passwordType"
-                                   class="round-edges"
                                    id="passwordInput"
                                    required></ion-input>
                     </ion-item>
@@ -62,13 +60,16 @@
                 <a (click)="showFAQ()" class="uppercase" style="margin-left: 5px;">FAQ</a>
             </ion-row>
 
-            <ion-row class="small-links" (click)="goToCreateAccount()">
-                <p style="font-size: 1rem; margin: 0.5rem 0;">Pas encore de compte ?</p>
-                <b><a style="font-size: 1rem; margin: 0.5rem 0;" >Rejoins la communauté !</a></b>
-            </ion-row>
-
+            <section class="footer" (click)="goToCreateAccount()">
+                    <ion-row justify-content-center>
+                        <p>Pas encore de compte ?</p>
+                    </ion-row>
+                    <ion-row justify-content-center  (click)="goToCreateAccount()">
+                        <b><a>Rejoins la communauté !</a></b>
+                    </ion-row>
+            </section>
         </section>
     </section>
-
-
 </ion-content>
+
+

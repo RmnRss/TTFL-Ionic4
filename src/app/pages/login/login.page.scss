@@ -1,6 +1,5 @@
 .custom-padding {
-  padding: 30px;
-  padding-top: 5px;
+  padding: 5px 30px;
 }
 
 /****************************************************
@@ -54,4 +53,18 @@ ion-item ion-icon {
   color: white;
 }
 
+/****************************************************
+               LOGIN FOOTER STYLE
+****************************************************/
 
+.footer{
+  background : var(--ion-color-dark);
+  border: none;
+  color: white;
+  padding: 1rem;
+  max-height: 15%;
+}
+
+.footer p{
+  margin-top: 0;
+}
