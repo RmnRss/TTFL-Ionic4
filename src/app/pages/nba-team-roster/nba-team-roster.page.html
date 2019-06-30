@@ -9,38 +9,43 @@
 
 <ion-content color="light" padding>
     <ion-card class="pick-card" *ngFor="let player of roster" [class.unAvailable]="!player.isAvailable">
-        <ion-row>
-            <!-- JERSEY DRAWING -->
-            <ion-col size="2" class="jersey-padding" (click)="showPlayerStats(player)">
-                <svg height="43" overflow="hidden" style="display: block;margin: auto;" width="34">
-                    <rect [ngStyle]="{'fill': selectedTeam.colors.primary}" height="43" width="34" x="0" y="0"></rect>
-                    <ellipse [ngStyle]="{'stroke': selectedTeam.colors.secondary}" cx="0" cy="5" fill="white" rx="8"
-                             ry="15"
-                             stroke-width="2"></ellipse>
-                    <ellipse [ngStyle]="{'stroke': selectedTeam.colors.secondary}" cx="35" cy="5" fill="white" rx="8"
-                             ry="15"
-                             stroke-width="2"></ellipse>
-                    <ellipse [ngStyle]="{'stroke': selectedTeam.colors.secondary}" cx="17" cy="0" fill="white" rx="8"
-                             ry="8"
-                             stroke-width="2"></ellipse>
-                </svg>
+        <ion-card-content>
+            <ion-row>
+                <!-- JERSEY -->
+                <ion-col size="2" (click)="showPlayerStats(player)">
+                    <svg height="43" overflow="hidden" style="display: block;margin: auto;" width="34">
+                        <rect [ngStyle]="{'fill': selectedTeam.colors.primary}" height="43" width="34" x="0" y="0"></rect>
+                        <ellipse [ngStyle]="{'stroke': selectedTeam.colors.secondary}" cx="0" cy="5" fill="white" rx="8"
+                                 ry="15"
+                                 stroke-width="2"></ellipse>
+                        <ellipse [ngStyle]="{'stroke': selectedTeam.colors.secondary}" cx="35" cy="5" fill="white" rx="8"
+                                 ry="15"
+                                 stroke-width="2"></ellipse>
+                        <ellipse [ngStyle]="{'stroke': selectedTeam.colors.secondary}" cx="17" cy="0" fill="white" rx="8"
+                                 ry="8"
+                                 stroke-width="2"></ellipse>
+                    </svg>
 
-                <!-- JERSEY NUMBER -->
-                <div class="jersey-nbr">{{player.jersey}}</div>
-            </ion-col>
+                    <!-- JERSEY NUMBER -->
+                    <div class="jersey-nbr">{{player.jersey}}</div>
+                </ion-col>
 
-            <!-- PLAYER INFO -->
-            <ion-col size="8" class="info" (click)="showPlayerStats(player)">
-                <!-- PLAYER NAME -->
-                <b>{{player.firstName}} {{player.lastName}}</b>
-                <!-- PLAYER STATS -->
-                <p class="stats">{{player.ppg}} ppg | {{player.apg}} apg | {{player.rpg}} rpg</p>
-            </ion-col>
+                <!-- PLAYER INFO -->
+                <ion-col align-self-end size="8" (click)="showPlayerStats(player)">
+                    <!-- PLAYER NAME -->
+                    <b>{{player.firstName}} {{player.lastName}}</b>
+                    <!-- PLAYER STATS -->
+                    <p>{{player.ppg}} ppg | {{player.apg}} apg | {{player.rpg}} rpg</p>
+                </ion-col>
 
-            <ion-col size="2" (click)="selectPlayer(player)" *ngIf="player.isAvailable">
-                <ion-icon class="icon" name="checkmark-circle" [class.highlight]="player.selected"></ion-icon>
-            </ion-col>
-        </ion-row>
+                <!-- SELECT BUTTON -->
+                <ion-col align-self-center size="2" (click)="selectPlayer(player)" *ngIf="player.isAvailable">
+                    <ion-row justify-content-center>
+                        <ion-icon class="icon" name="checkmark-circle" [class.highlight]="player.selected"></ion-icon>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
     </ion-card>
 
     <ion-fab class="extended" vertical="bottom" horizontal="center" slot="fixed" *ngIf="selectedPlayer.personId != 0">

@@ -120,37 +120,24 @@ b {
 /****************************************************
                     PICK CARDS
 ****************************************************/
+.name{
+  overflow: hidden;
+}
 
 .pick-card {
-  padding: 0 0 0 0;
-  margin: 10px 0 10px 0;
+  padding: 0;
   width: auto;
-  height: 72px;
   background-color: white;
 }
 
 .pick-card ion-card-content {
   height: 100%;
-  padding: 0 0 0 0;
-}
-
-.pick-card ion-row {
-  height: 100%;
-  align-items: center;
-}
-
-.pick-card ion-col {
-  text-align: center;
-  align-self: center;
+  padding: 5px;
 }
 
 .pick-card ion-icon {
   font-size: 2rem;
   color: var(--ion-color-dark-shade);
-}
-
-.pick-card .info {
-  text-align: left !important;
 }
 
 .pick-card .score-bubble {
@@ -168,30 +155,14 @@ b {
 
 /**************      DATE STYLE       **************/
 
-.pick-card .date {
-  justify-content: center !important;
-  text-align: center !important;
-  background-color: var(--ion-color-dark);
-}
-
-.pick-card .date ion-row {
-  height: 50%;
-  justify-content: center;
-}
-
 .pick-card .day {
-  color: white;
-  margin-top: 5px !important;
-
+  color: black;
   font-family: Montserrat, sans-serif;
-  font-weight: bold;
 }
 
 .pick-card .month {
   color: var(--ion-color-danger);
-
   font-family: Montserrat, sans-serif;
-  font-weight: bold;
   overflow: hidden;
 }
 
@@ -206,12 +177,6 @@ b {
   text-align: center;
   color: white;
 }
-
-.jersey-padding {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
 /****************************************************
                     GAME CARDS
 ****************************************************/
@@ -353,15 +318,9 @@ ion-header section {
   color: white;
 }
 
-ion-header section .info {
-  margin-top: 5px;
-  padding-bottom: 0;
-}
-
 ion-header section .info h2 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 18px;
 }
 
 ion-header section .uppercase {
@@ -373,6 +332,8 @@ ion-header section .uppercase {
 
   font-weight: normal;
 }
+
+/**************        SEGMENT         **************/
 
 ion-segment-button {
   background-color: white;

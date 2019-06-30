@@ -16,35 +16,26 @@
             <ion-card-content>
                 <ion-row>
                     <!-- DATE -->
-                    <ion-col size="2" class="date">
-                        <ion-row>
+                    <ion-col align-self-center size="2">
+                        <ion-row justify-content-center>
                             <h1 class="day">{{pick.gameDate.date | date: 'dd': undefined : 'fr-FR'}}</h1>
                         </ion-row>
 
-                        <ion-row>
-                            <h6 class="month">{{pick.gameDate.date | date: 'MMMM': undefined : 'fr-FR' | uppercase | slice :0:3 }}</h6>
+                        <ion-row justify-content-center>
+                            <h6  class="month">{{pick.gameDate.date | date: 'MMMM': undefined : 'fr-FR' | uppercase | slice :0:3 }}</h6>
                         </ion-row>
                     </ion-col>
 
                     <!-- Displays a question mark when the user hasn't pick any nba player -->
-                    <ion-col size="2" *ngIf="!pick.hasPlayer">
-                        <ion-icon class="icon" name="help"></ion-icon>
-                    </ion-col>
-
-                    <!-- Displayed when the user hasn't pick any nba player -->
-                    <ion-col size="6" class="info" *ngIf="!pick.hasPlayer">
-                        <p>Choisis ton joueur</p>
-                        <p>Fermeture à {{pick.gameDate.getStartTime() | date:'HH': undefined : 'fr-FR'}}h</p>
-                    </ion-col>
-
-                    <!-- Displayed when the user hasn't pick any nba player -->
-                    <ion-col size="2" *ngIf="!pick.hasPlayer">
-                        <ion-icon class="icon" name="ios-arrow-forward"></ion-icon>
+                    <ion-col align-self-center size="2" *ngIf="!pick.hasPlayer">
+                        <ion-row justify-content-center>
+                            <ion-icon class="icon" name="help-circle" style="font-size: 2.5rem"></ion-icon>
+                        </ion-row>
                     </ion-col>
 
                     <!-- JERSEY -->
                     <!-- Displayed when the user has chosen a pick -->
-                    <ion-col size="2" class="jersey-padding" *ngIf="pick.hasPlayer">
+                    <ion-col align-self-center size="2" *ngIf="pick.hasPlayer">
                         <svg height="43" overflow="hidden" style="display: block;margin: auto;" width="34">
                             <rect [ngStyle]="{'fill': pick.nbaPlayer.team.colors.primary}" height="43" width="34" x="0"
                                   y="0"></rect>
@@ -64,14 +55,26 @@
                         <div class="jersey-nbr">{{pick.nbaPlayer.jersey}}</div>
                     </ion-col>
 
+                    <!-- Displayed when the user hasn't pick any nba player -->
+                    <ion-col align-self-end size="6" *ngIf="!pick.hasPlayer">
+                        <p>Choisis ton joueur</p>
+                        <p>Fermeture à {{pick.gameDate.getStartTime() | date:'HH': undefined : 'fr-FR'}}h</p>
+                    </ion-col>
+
                     <!-- PLAYER NAME -->
                     <!-- Displayed when the user has chosen a pick -->
-                    <ion-col size="6" class="info" *ngIf="pick.hasPlayer">
-                        <b>{{pick.nbaPlayer.firstName}} {{pick.nbaPlayer.lastName}}</b>
+                    <ion-col align-self-end size="6" *ngIf="pick.hasPlayer">
+                        <b class="name">{{pick.nbaPlayer.firstName}} {{pick.nbaPlayer.lastName}}</b>
                         <p *ngIf="!pick.gameDate.hasStarted()">Fermeture
                             à {{pick.gameDate.getStartTime() | date:'hh': undefined : 'fr-FR'}}h</p>
                     </ion-col>
 
+                    <!-- Displayed when the user hasn't pick any nba player -->
+                    <ion-col align-self-center size="2" *ngIf="!pick.gameDate.hasStarted()">
+                        <ion-row justify-content-center>
+                            <ion-icon class="icon" name="ios-arrow-forward"></ion-icon>
+                        </ion-row>
+                    </ion-col>
 
                     <!-- PICK SCORE -->
                     <!-- Displayed when the game has been played and stats are available -->
