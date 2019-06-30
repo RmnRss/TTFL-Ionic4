@@ -7,12 +7,14 @@
     </ion-toolbar>
 
     <section #vanishingSection [appScrollVanish]="scrollArea">
-        <ion-row align-items-center>
-            <ion-col align-self-start size="3" style=" padding: 0px 16px; text-align: start;">
-                <ion-icon name="basketball" style="font-size: 4rem; "></ion-icon>
+        <ion-row>
+            <ion-col align-self-end size="3" style=" padding: 0px 16px; text-align: start;">
+                <ion-row justify-content-center>
+                    <ion-icon name="basketball" style="font-size: 4rem; "></ion-icon>
+                </ion-row>
             </ion-col>
 
-            <ion-col size="7" class="info">
+            <ion-col align-self-end class="info" size="7">
                 <h2>{{userService.user.username | titlecase}}</h2>
                 <p class="uppercase" style="margin-top: 3px;">{{userTeam.name}}</p>
             </ion-col>
