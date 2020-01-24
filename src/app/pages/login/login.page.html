@@ -1,0 +1,75 @@
+<ion-content color="dark">
+    <!-- HEADER -->
+    <section class="bg-header ion-align-self-stretch">
+        <section class="login-header">
+            <ion-row>
+                <h1 class="brand-name">#TRASHTALK</h1>
+            </ion-row>
+
+            <ion-row class="app-row">
+                <h3 class="app-name">FANTASY LEAGUE</h3>
+            </ion-row>
+        </section>
+    </section>
+    <section style="margin-inline-start: 30px; margin-left: 30px;">
+        <h3>Connexion</h3>
+    </section>
+    <section class="custom-padding ion-align-self-stretch">
+        <section>
+            <!-- LOGIN FORM -->
+            <form>
+                <ion-list>
+                    <ion-item class="custom-input ion-no-padding">
+                        <ion-label position="floating">Identifiant</ion-label>
+                        <ion-input [(ngModel)]="userLogin"
+                                   name="userLogin"
+                                   (keyup.enter)="login(userLogin,password)"
+                                   id="idInput" required
+                                   type="email"></ion-input>
+                    </ion-item>
+
+                    <ion-item class="custom-input ion-no-padding">
+                        <ion-icon name="eye-off" slot="end" (click)="togglePassword()"
+                                  *ngIf="!passwordShown"></ion-icon>
+                        <ion-icon name="eye" slot="end" (click)="togglePassword()" *ngIf="passwordShown"></ion-icon>
+
+                        <ion-label position="floating">Mot de passe</ion-label>
+                        <ion-input (keyup.enter)="login(userLogin,password)"
+                                   [(ngModel)]="password"
+                                   name="password"
+                                   [type]="passwordType"
+                                   id="passwordInput"
+                                   required></ion-input>
+                    </ion-item>
+                    <p class="error">{{error}}</p>
+                </ion-list>
+
+                <ion-row class="pw-link ion-justify-content-end">
+                    <a class="ion-text-end" (click)="forgotPassword()">Mot de passe oublié ?</a>
+                </ion-row>
+
+                <section>
+                    <ion-button color="primary" expand="block" (click)="login(userLogin,password)">Connexion
+                    </ion-button>
+                </section>
+            </form>
+
+            <ion-row class="small-links">
+                <a (click)="showRules()" class="uppercase" style="margin-right: 5px;">Les regles</a>
+                <a class="uppercase"> - </a>
+                <a (click)="showFAQ()" class="uppercase" style="margin-left: 5px;">FAQ</a>
+            </ion-row>
+
+            <section class="footer" (click)="goToCreateAccount()">
+                    <ion-row justify-content-center>
+                        <p>Pas encore de compte ?</p>
+                    </ion-row>
+                    <ion-row justify-content-center  (click)="goToCreateAccount()">
+                        <b><a>Rejoins la communauté !</a></b>
+                    </ion-row>
+            </section>
+        </section>
+    </section>
+</ion-content>
+
+

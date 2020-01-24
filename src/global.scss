@@ -9,3 +9,391 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+// --------------------------------------------------
+//                App Global Sass
+// --------------------------------------------------
+
+/****************************************************
+                    BACKGROUND
+****************************************************/
+
+.bg-grey {
+  background-color: var(--ion-color-light);
+}
+
+.custom-padding {
+  padding: 5px 30px;
+}
+
+/****************************************************
+                       TEXT
+****************************************************/
+
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+ion-title, ion-card-title, ion-button, h1, h2, .uppercase {
+  font-weight: 600;
+}
+
+.md ion-label, .ios ion-label {
+  font-family: Montserrat, sans-serif !important;
+}
+
+h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+h1{
+  font-size: 1.625rem !important;
+}
+
+h2, h3{
+  font-size: 1.25rem !important;
+}
+
+h4, h5, h6{
+  font-size: 1.125rem !important;
+}
+
+p, b {
+  font-size: 1rem !important;
+}
+
+p {
+  font-family: Rubik, sans-serif;
+  font-weight: normal;
+}
+
+a {
+  color: var(--ion-color-primary);
+  font-family: Rubik, sans-serif;
+  //font-size: 0.875rem;
+  font-weight: normal;
+}
+
+b {
+  font-weight: 600;
+  color: black;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/****************************************************
+                    INPUT FORMS
+****************************************************/
+
+.custom-input {
+  --background: transparent;
+  --background-focused: transparent;
+  color: white;
+  --border-color: white;
+  --padding-left: 0;
+}
+
+.list-md, .list-ios {
+  background: transparent;
+  margin: 8px 0;
+}
+
+.error {
+  color: var(--ion-color-danger);
+  font-size: small;
+}
+
+/****************************************************
+                      CARDS
+****************************************************/
+
+.ios ion-card, .md ion-card {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  border-radius: 10px;
+  background: white;
+}
+
+/****************************************************
+                    PICK CARDS
+****************************************************/
+.name{
+  overflow: hidden;
+}
+
+.pick-card {
+  padding: 0;
+  width: auto;
+  background-color: white;
+}
+
+.pick-card ion-card-content {
+  height: 100%;
+  padding: 5px;
+}
+
+.pick-card ion-icon {
+  font-size: 2rem;
+  color: var(--ion-color-dark-shade);
+}
+
+.pick-card .score-bubble {
+  background-color: var(--ion-color-dark);
+  border-radius: 10px 0 0 10px;
+  height: 35px;
+}
+
+.pick-card .score {
+  color: white;
+  text-align: right;
+  margin-top: 2px !important;
+  margin-bottom: 0 !important;
+}
+
+/**************      DATE STYLE       **************/
+
+.pick-card .day {
+  color: black;
+  font-family: Montserrat, sans-serif;
+}
+
+.pick-card .month {
+  color: var(--ion-color-danger);
+  font-family: Montserrat, sans-serif;
+  overflow: hidden;
+}
+
+/**************        JERSEYS        **************/
+
+.jersey-nbr {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+
+  margin-top: -28px;
+  text-align: center;
+  color: white;
+}
+/****************************************************
+                    GAME CARDS
+****************************************************/
+
+.nba-logo {
+  width: 65px !important;
+}
+
+/****************************************************
+                    PLAYER CARDS
+****************************************************/
+
+
+/****************************************************
+                    DRAWER STYLE
+****************************************************/
+
+/**************        GENERAL        **************/
+
+.drawer ion-icon {
+  color: white;
+}
+
+/**************        HEADER         **************/
+
+.drawer-header ion-title {
+  padding: 0;
+}
+
+.drawer-header ion-row {
+  height: 100%;
+  padding: 12px 0 0 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-header ion-col {
+  padding: 0;
+  //align-self: center;
+  align-self: stretch
+}
+
+.user-pick {
+  font-size: 3.2rem;
+  text-align: center;
+  align-self: center;
+}
+
+.stats {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/**************     LIST OF PAGES     **************/
+
+.list-md.list-inset {
+  margin-left: 0;
+  margin-right: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pages-list ion-item-divider {
+  --background: none;
+  color: var(--ion-color-light);
+  font-weight: 600;
+}
+
+.pages-list ion-item {
+  --background: none;
+  color: white;
+  padding-left: 10px;
+}
+
+/**************        FOOTER         **************/
+
+.drawer-footer {
+  height: 75px;
+  background-color: var(--ion-color-dark-shade);
+}
+
+.drawer-footer ion-row {
+  height: 100%;
+  align-items: center;
+}
+
+.drawer-footer ion-col {
+  height: inherit;
+  text-align: center;
+  align-self: center;
+}
+
+.drawer-footer ion-icon {
+  font-size: 2rem;
+}
+
+
+/****************************************************
+                      BADGES
+****************************************************/
+
+.badge-inline {
+  display: inline-block;
+}
+
+.stats-badge {
+  font-weight: normal;
+  background-color: transparent;
+  border: 1.5px solid;
+}
+
+.md ion-badge, .ios ion-badge {
+  border-radius: 25px;
+  font-weight: lighter;
+}
+
+/****************************************************
+                      BUTTONS
+****************************************************/
+
+ion-fab.extended {
+  left: 33%;
+  bottom: 15px;
+
+}
+
+ion-fab-button.extended {
+  width: 200px;
+  height: 48px;
+  --border-radius: 100px;
+}
+
+/****************************************************
+                    VANISH HEADER
+****************************************************/
+
+ion-header section {
+  background-color: var(--ion-color-dark);
+  color: white;
+}
+
+ion-header section .info h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ion-header section .uppercase {
+  margin-bottom: 0;
+  margin-top: 2px;
+
+  background-color: var(--ion-color-dark);
+  color: white;
+
+  font-weight: normal;
+}
+
+/**************        SEGMENT         **************/
+
+ion-segment-button {
+  background-color: white;
+  pointer-events: none;
+  color: var(--ion-color-contrast);
+}
+
+.number {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  color: var(--ion-color-danger);
+}
+
+.category-name {
+  margin-bottom: 5px;
+}
+
+/****************************************************
+                      RANKING
+****************************************************/
+
+.ranking .ranking-header {
+  color: var(--ion-color-dark);
+  font-size: 14px;
+}
+
+.ranking .ranked-items {
+  max-height: 50px;
+  border-bottom: 0.2px solid var(--ion-color-light-shade);
+}
+
+.ranking .ranked-items ion-icon.up {
+  transform: rotate(-90deg);
+  color: var(--ion-color-success);
+}
+
+.ranking .ranked-items ion-icon.down {
+  transform: rotate(90deg);
+  color: var(--ion-color-danger);
+}
+
+.ranking .ranked-items ion-col {
+  height: 100%;
+}
+
+.ranking .ranked-items b {
+  text-align: start;
+}
+
+/****************************************************
+                      SEPARATOR
+****************************************************/
+
+.separator {
+  width: 50%;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--ion-color-danger);
+  border: 0 none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-title>Mon équipe</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <section #vanishingSection [appScrollVanish]="scrollArea">
+        <ion-row align-items-center>
+            <ion-col align-self-start size="3" style=" padding: 0px 16px; text-align: start;">
+                <ion-icon name="basketball" style="font-size: 4rem; "></ion-icon>
+            </ion-col>
+
+
+            <ion-col align-self-end class="info" size="7">
+                <h2>{{userTeam.name | titlecase}}</h2>
+            </ion-col>
+        </ion-row>
+    </section>
+
+    <ion-segment>
+        <ion-segment-button>
+            <p class="category-name uppercase">Rang</p>
+            <h2 class="number">{{userTeam.rank}}</h2>
+        </ion-segment-button>
+        <ion-segment-button>
+            <p class="category-name uppercase">Points</p>
+            <h2 class="number">{{userTeam.points}}</h2>
+        </ion-segment-button>
+        <ion-segment-button>
+            <p class="category-name uppercase">Membres</p>
+            <h2 class="number">{{userTeam.members.length}}</h2>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content color="light" class="ranking" #scrollArea scrollEvents="true" padding>
+
+    <ion-row align-items-end class="ranking-header">
+        <ion-col size="8"><b>Membre</b></ion-col>
+        <ion-col size="4"><b>Points</b></ion-col>
+    </ion-row>
+
+    <ion-row align-items-center class="ranked-items" *ngFor="let member of userTeam.members">
+        <ion-col size="8" align-self-center>
+            <p>{{member.username}}</p>
+        </ion-col>
+        <ion-col size="4" align-self-center>
+            <b>{{member.points}}</b>
+        </ion-col>
+    </ion-row>
+
+    <section style="margin-top: 15px">
+        <ion-button color="danger" expand="block" (click)="leaveTeam()">Quitter l'équipe</ion-button>
+    </section>
+
+</ion-content>

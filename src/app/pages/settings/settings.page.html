@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Paramètres</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="light" padding>
+
+    <!--OBJECTIVES PART-->
+    <section>
+        <h3>Mes accès</h3>
+        <form>
+            <ion-list class="wide-list">
+                <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input (keyup.enter)="changeEmail(newEmail)"
+                               [(ngModel)]="newEmail"
+                               name="newEmail"
+                               id="newEmailInput"
+                               type="email"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Mot de passe</ion-label>
+                    <ion-input (keyup.enter)="changePassword(newPassword, confirmPassword)"
+                               [(ngModel)]="newPassword"
+                               name="newPassword"
+                               id="newPassword"
+                               type="password"
+                    ></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Confirmer le mot de passe</ion-label>
+                    <ion-input (keyup.enter)="changePassword(newPassword, confirmPassword)"
+                               [(ngModel)]="confirmPassword"
+                               name="confirmPassword"
+                               id="confirmPassword"
+                               type="password"
+                    ></ion-input>
+                </ion-item>
+            </ion-list>
+        </form>
+    </section>
+
+    <!--OBJECTIVES PART-->
+    <section>
+        <h3>Mes infos</h3>
+        <ion-row>
+            <p>Pour défendre les couleurs de ta région dans le championnat de France de TTFL.</p>
+        </ion-row>
+        <form>
+            <ion-list class="wide-list">
+                <ion-item>
+                    <ion-label>Région</ion-label>
+                    <ion-select>
+                        <ion-select-option value="pays de la loire">Pays de la Loire</ion-select-option>
+                        <ion-select-option value="bretagne">Bretagne</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Année de naissance</ion-label>
+                    <ion-select>
+                        <ion-select-option value="1995">1995</ion-select-option>
+                        <ion-select-option value="1994">1994</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </form>
+    </section>
+
+</ion-content>

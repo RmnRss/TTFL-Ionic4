@@ -1,5 +1,7 @@
 {
   "name": "TTFLApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

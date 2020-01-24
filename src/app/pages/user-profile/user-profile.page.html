@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <ion-title>Mon Profil</ion-title>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <section #vanishingSection [appScrollVanish]="scrollArea">
+        <ion-row>
+            <ion-col align-self-end size="3" style=" padding: 0px 16px; text-align: start;">
+                <ion-row justify-content-center>
+                    <ion-icon name="basketball" style="font-size: 4rem; "></ion-icon>
+                </ion-row>
+            </ion-col>
+
+            <ion-col align-self-end class="info" size="7">
+                <h2>{{userService.user.username | titlecase}}</h2>
+                <p class="uppercase" style="margin-top: 3px;">{{userTeam.name}}</p>
+            </ion-col>
+        </ion-row>
+    </section>
+
+    <ion-segment>
+        <ion-segment-button>
+            <p class="category-name uppercase">Rang</p>
+            <h2 class="number">{{userService.user.rank}}</h2>
+        </ion-segment-button>
+        <ion-segment-button>
+            <p class="category-name uppercase">Points</p>
+            <h2 class="number">{{userService.user.points}}</h2>
+        </ion-segment-button>
+        <ion-segment-button>
+            <p class="category-name uppercase">Prog.</p>
+            <h2 class="number">+12</h2>
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="ranking" color="light" #scrollArea scrollEvents="true" padding>
+
+    <ion-row align-items-end class="ranking-header">
+        <ion-col size="3"><b>Date</b></ion-col>
+        <ion-col size="3"><b>Joueur</b></ion-col>
+        <ion-col offset="4" size="2"><b>Score</b></ion-col>
+    </ion-row>
+
+    <ion-row align-items-center class="ranked-items" *ngFor="let pick of userPicks">
+        <ion-col size="3" align-self-center>
+            <p>{{pick.gameDate.date | date: 'M/d/yy': undefined : 'fr-FR'}}</p>
+        </ion-col>
+        <ion-col size="7" align-self-center>
+            <b>{{pick.nbaPlayer.firstName}} {{pick.nbaPlayer.lastName}}</b>
+        </ion-col>
+        <ion-col size="2" align-self-center>
+            <b>{{pick.score}}</b>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

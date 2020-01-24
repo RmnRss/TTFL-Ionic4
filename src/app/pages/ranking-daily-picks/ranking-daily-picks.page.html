@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Top picks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content color="light" padding>
+  <ion-row align-items-end class="ranking-header">
+    <ion-col size="2"><b>Rang</b></ion-col>
+    <ion-col offset="8" size="2"><b>Pts</b></ion-col>
+  </ion-row>
+
+  <ion-row align-items-center class="ranked-items" *ngFor="let pick of picks">
+    <ion-col size="2" align-self-center>
+      <p>{{pick.rank}}</p>
+    </ion-col>
+    <ion-col size="8" align-self-center>
+      <b>{{pick.nbaPlayer.firstName | titlecase}} {{pick.nbaPlayer.lastName | titlecase}}</b>
+    </ion-col>
+    <ion-col size="2" align-self-center>
+      <b>{{pick.score}}</b>
+    </ion-col>
+  </ion-row>
+</ion-content>

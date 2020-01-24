@@ -1,0 +1,66 @@
+/****************************************************
+               LOGIN HEADER STYLE
+****************************************************/
+.bg-header{
+  background: var(--ion-color-danger-alt);
+  min-height: 25%;
+  min-width: 100%;
+  padding: 30px;
+}
+
+.login-header {
+  display: block;
+  text-align: start;
+}
+
+.brand-name {
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.08em;
+  margin-top: 15%;
+}
+
+.app-row {
+  color: white;
+  justify-content: start;
+}
+
+.app-name {
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  margin-top: 5px;
+  letter-spacing: 0.08em;
+}
+
+
+.pw-link {
+  margin-bottom: 2rem;
+}
+
+.small-links {
+  margin: 1.5rem 0;
+  justify-content: center;
+}
+
+ion-item ion-icon {
+  margin-top: 28px;
+  color: white;
+}
+
+/****************************************************
+               LOGIN FOOTER STYLE
+****************************************************/
+
+.footer{
+  background : var(--ion-color-dark);
+  border: none;
+  color: white;
+  padding: 1rem;
+  max-height: 15%;
+}
+
+.footer p{
+  margin-top: 0;
+}
