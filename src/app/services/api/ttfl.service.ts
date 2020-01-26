@@ -146,7 +146,7 @@ export class TTFLService {
         date.setUTCSeconds(0);
         date.setUTCMilliseconds(0);
 
-        let filter = {'where': {'userId': user.id, 'date': day.date}};
+        let filter = {'where': {'userId': user.id, 'date': date}};
         let params = new HttpParams().set('filter', JSON.stringify(filter));
 
         return new Promise((resolve, reject) => {
@@ -164,6 +164,7 @@ export class TTFLService {
                         pick.bestPick = received[0].bestPick;
                         pick.worstPick = received[0].worstPick;
                         pick.isUpdated = received[0].isUpdated;
+
 
                         this.nbaService.getNBAPlayer(pick.nbaPlayer.personId)
                             .then(player => {
