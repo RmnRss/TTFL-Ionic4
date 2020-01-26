@@ -116,7 +116,6 @@ export class NBAService {
             this.http.get(url).subscribe((fullRoster: any) => {
                 let roster = new Array<NBAPlayer>();
                 let allPlayers = fullRoster.league.standard.players;
-                // let allPlayers = fullRoster.league.sacramento.players;
 
                 for (let player of allPlayers) {
                     let tempPlayer = new NBAPlayer();
@@ -154,7 +153,6 @@ export class NBAService {
                 nbaPlayer.personId = id;
 
                 let all = allPlayers.league.standard;
-                // let all = allPlayers.league.sacramento;
 
                 for (let player of all) {
                     if (nbaPlayer.personId == player.personId) {
@@ -188,7 +186,7 @@ export class NBAService {
         return new Promise((resolve, reject) => {
             this.http.get(url).subscribe((res: any) => {
                 let seasonStats = res.league.standard.stats.latest;
-                // let seasonStats = res.league.sacramento.stats.latest;
+
                 player.ppg = seasonStats.ppg;
                 player.rpg = seasonStats.rpg;
                 player.apg = seasonStats.apg;
@@ -218,8 +216,7 @@ export class NBAService {
         return new Promise((resolve, reject) => {
             this.http.get(url).subscribe((schedule: any) => {
                 let NBAGames = new Array<NBAGame>();
-                // let allNBAGames = schedule.league.standard;
-                let allNBAGames = schedule.league.sacramento;
+                let allNBAGames = schedule.league.standard;
 
                 for (let anNBAGame of allNBAGames) {
 
