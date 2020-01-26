@@ -35,7 +35,7 @@ export class HomePage implements OnInit {
      */
     ngOnInit() {
         this.picks = new Array<TTFLPick>();
-        this.NBADaysOfTheWeek = this.dateService.getWeek(new Date('1 July, 2019'));
+        this.NBADaysOfTheWeek = this.dateService.getWeek(new Date());
 
         this.nbaService.getLinksPromise()
             .then(res => {
